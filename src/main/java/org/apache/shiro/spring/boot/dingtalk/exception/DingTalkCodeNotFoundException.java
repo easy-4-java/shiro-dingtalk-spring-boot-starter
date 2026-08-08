@@ -18,7 +18,7 @@ package org.apache.shiro.spring.boot.dingtalk.exception;
 import org.apache.shiro.authc.AuthenticationException;
 
 /**
- * @author <a href="https://github.com/hiwepy">hiwepy</a>
+ * @author [@Loong Wan](https://github.com/loong10k)
  */
 public class DingTalkCodeNotFoundException extends AuthenticationException {
 
