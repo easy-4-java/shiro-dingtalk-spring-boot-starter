@@ -21,7 +21,7 @@ import org.apache.shiro.spring.boot.dingtalk.authc.DingTalkTmpCodeLoginRequest;
 /**
  * DingTalk Authentication Token
  *
- * @author ： <a href="https://github.com/hiwepy">hiwepy</a>
+ * @author [@Loong Wan](https://github.com/loong10k)
  */
 @SuppressWarnings("serial")
 public class DingTalkTmpCodeAuthenticationToken extends DefaultAuthenticationToken {
