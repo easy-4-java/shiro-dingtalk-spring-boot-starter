@@ -13,32 +13,26 @@
  * License for the specific language governing permissions and limitations under
  * the License.
  */
-package org.apache.shiro.spring.boot.dingtalk.token;
+package org.apache.shiro.spring.boot.dingtalk.authc;
 
-import org.apache.shiro.biz.authc.token.DefaultAuthenticationToken;
-import org.apache.shiro.spring.boot.dingtalk.authc.DingTalkMaLoginRequest;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
+
+import static org.assertj.core.api.Assertions.assertThat;
 
 /**
- * DingTalk Authentication Token
+ * Unit tests for {{ @link DingTalkAuthenticationSuccessHandler }}.
  *
  * @author [@Loong Wan](https://github.com/loong10k)
+ * @since 1.0.0
  */
-@SuppressWarnings("serial")
-public class DingTalkMaAuthenticationToken extends DefaultAuthenticationToken {
+@DisplayName("DingTalkAuthenticationSuccessHandler Tests")
+class DingTalkAuthenticationSuccessHandlerTest {
 
-	/**
-	 * 登录请求信息
-	 */
-	private DingTalkMaLoginRequest principal;
-
-	public DingTalkMaAuthenticationToken(DingTalkMaLoginRequest loginRequest, String host) {
-		this.principal = loginRequest;
-		this.setHost(host);
-	}
-
-	@Override
-	public Object getPrincipal() {
-		return principal;
-	}
-
+    @Test
+    @DisplayName("Instance can be created via constructor")
+    void testInstantiation() {
+        DingTalkAuthenticationSuccessHandler instance = new DingTalkAuthenticationSuccessHandler();
+        assertThat(instance).isNotNull();
+    }
 }
