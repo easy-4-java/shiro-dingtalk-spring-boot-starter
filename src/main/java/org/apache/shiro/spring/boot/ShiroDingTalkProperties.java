@@ -25,6 +25,11 @@ import org.apache.shiro.spring.boot.dingtalk.property.ShiroDingTalkSuiteProperti
 import org.springframework.boot.context.properties.ConfigurationProperties;
 
 import java.util.List;
+/** Configuration properties for Shiro Ding Talk.
+ *
+ * @author [@Loong Wan](https://github.com/loong10k)
+ * @since 1.0.0
+ */
 
 @ConfigurationProperties(ShiroDingTalkProperties.PREFIX)
 @Getter
@@ -38,24 +43,24 @@ public class ShiroDingTalkProperties {
 	private boolean enabled = false;
 
 	/**
-	 * 	企业ID
+	 * 	enterpriseID
 	 */
 	private String corpId;
 	
 	/**
-	 *    企业内部开发：小程序、H5配置
+	 *    enterpriseinternal：、H5configuration
 	 */
 	private List<ShiroDingTalkCropAppProperties> cropApps;
 	/**
-	 *    第三方个人应用：小程序配置
+	 *    third-partyapplication：configuration
 	 */
 	private List<ShiroDingTalkPersonalMiniAppProperties> apps;
 	/**
-	 * 	第三方企业应用：小程序、H5配置
+	 * 	third-partyenterpriseapplication：、H5configuration
 	 */
 	private List<ShiroDingTalkSuiteProperties> suites;
 	/**
-	 *	 移动接入应用：扫码登录配置
+	 *	 application：scan codeloginconfiguration
 	 */
 	private List<ShiroDingTalkLoginProperties> logins;
 	

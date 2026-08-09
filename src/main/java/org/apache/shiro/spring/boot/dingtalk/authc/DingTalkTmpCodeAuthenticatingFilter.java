@@ -34,9 +34,9 @@ import jakarta.servlet.ServletResponse;
 import java.nio.charset.StandardCharsets;
 
 /**
- *  企业内部应用免登：https://open.dingtalk.com/document/orgapp-server/enterprise-internal-application-logon-free
- *  第三方企业应用免登： https://open.dingtalk.com/document/orgapp-server/third-party-enterprise-application-logon-free
- *  应用管理后台免登: https://open.dingtalk.com/document/orgapp-server/log-on-site-application-management-backend
+ *  Enterprise internal application free-login：https://open.dingtalk.com/document/orgapp-server/enterprise-internal-application-logon-free
+ *  Third-party enterprise application free-login： https://open.dingtalk.com/document/orgapp-server/third-party-enterprise-application-logon-free
+ *  Application management backend free-login: https://open.dingtalk.com/document/orgapp-server/log-on-site-application-management-backend
  * @author [@Loong Wan](https://github.com/loong10k)
  */
 @Slf4j
@@ -55,6 +55,12 @@ public class DingTalkTmpCodeAuthenticatingFilter extends AbstractTrustableAuthen
 	}
 
 	@Override
+	/** Returns whether the access allowed is enabled.
+	 * @param request the request
+	 * @param response the response
+	 * @param mappedValue the mappedValue
+	 * @return the result
+	 */
 	protected boolean isAccessAllowed(ServletRequest request, ServletResponse response, Object mappedValue) {
 		// 判断是否无状态
 		if (isSessionStateless()) {
@@ -156,7 +162,7 @@ public class DingTalkTmpCodeAuthenticatingFilter extends AbstractTrustableAuthen
 		}
 
 		/**
-		 * 	应用的唯一标识key
+		 * 	application uniqueidentifierkey
 		 */
 		String appId = obtainKey(request);
 		String token = obtainToken(request);
@@ -176,38 +182,68 @@ public class DingTalkTmpCodeAuthenticatingFilter extends AbstractTrustableAuthen
 		return new DingTalkTmpCodeAuthenticationToken(loginRequest, getHost(request));
 	}
 
+	/** Extracts the key parameter from the HTTP request.
+	 * @param request the request
+	 * @return the result
+	 */
 	protected String obtainKey(ServletRequest request) {
 		return request.getParameter(keyParameter);
 	}
 
+	/** Extracts the token parameter from the HTTP request.
+	 * @param request the request
+	 * @return the result
+	 */
 	protected String obtainToken(ServletRequest request) {
 		return request.getParameter(tokenParameter);
 	}
 
+	/** Extracts the code parameter from the HTTP request.
+	 * @param request the request
+	 * @return the result
+	 */
 	protected String obtainCode(ServletRequest request) {
 		return request.getParameter(codeParameter);
 	}
 
+	/** Returns the key parameter.
+	 * @return the result
+	 */
 	public String getKeyParameter() {
 		return keyParameter;
 	}
 
+	/** Sets the key parameter.
+	 * @param keyParameter the keyParameter
+	 */
 	public void setKeyParameter(String keyParameter) {
 		this.keyParameter = keyParameter;
 	}
 
+	/** Sets the token parameter.
+	 * @param tokenParameter the tokenParameter
+	 */
 	public void setTokenParameter(String tokenParameter) {
 		this.tokenParameter = tokenParameter;
 	}
 
+	/** Returns the token parameter.
+	 * @return the result
+	 */
 	public String getTokenParameter() {
 		return tokenParameter;
 	}
 
+	/** Returns the code parameter.
+	 * @return the result
+	 */
 	public String getCodeParameter() {
 		return codeParameter;
 	}
 
+	/** Sets the code parameter.
+	 * @param codeParameter the codeParameter
+	 */
 	public void setCodeParameter(String codeParameter) {
 		this.codeParameter = codeParameter;
 	}

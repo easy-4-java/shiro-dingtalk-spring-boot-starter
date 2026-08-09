@@ -28,6 +28,9 @@ public class DingTalkTempCodeAuthorizingRealm extends AbstractAuthorizingRealm {
 	}
 
 	@Override
+	/** Returns the authentication token class.
+	 * @return the result
+	 */
 	public Class<?> getAuthenticationTokenClass() {
 		return DingTalkTmpCodeAuthenticationToken.class;
 	}

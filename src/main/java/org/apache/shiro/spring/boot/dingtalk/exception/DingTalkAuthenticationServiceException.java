@@ -18,7 +18,7 @@ package org.apache.shiro.spring.boot.dingtalk.exception;
 import org.apache.shiro.authc.AuthenticationException;
 
 /**
- * DingTalk 服务端认证异常
+ * Exception thrown when a DingTalk server-side authentication error occurs
  * @author [@Loong Wan](https://github.com/loong10k)
  */
 @SuppressWarnings("serial")

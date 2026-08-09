@@ -12,7 +12,7 @@ import org.springframework.context.annotation.Configuration;
 
 
 /**
- * 自定义Filter通过@Bean注解后，被Spring Boot自动注册到了容器的Filter chain中，这样导致的结果是，所有URL都会被自定义Filter过滤，而不是Shiro中配置的一部分URL。
+ * Filtervia@Bean，Spring Boot Filter chain， ，URLFilter，Shiroconfiguration URL。
  * https://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#howto-disable-registration-of-a-servlet-or-filter
  * https://gitee.com/baomidou/sms
  */
@@ -21,6 +21,11 @@ import org.springframework.context.annotation.Configuration;
 	"org.apache.shiro.spring.config.web.autoconfigure.ShiroWebFilterConfiguration",  // shiro-spring-boot-web-starter
 	"org.apache.shiro.spring.boot.ShiroBizWebFilterConfiguration" // spring-boot-starter-shiro-biz
 })
+/** Configuration for Shiro Ding Talk Web authentication filter chain.
+ *
+ * @author [@Loong Wan](https://github.com/loong10k)
+ * @since 1.0.0
+ */
 @ConditionalOnProperty(prefix = ShiroDingTalkProperties.PREFIX, value = "enabled", havingValue = "true")
 @EnableConfigurationProperties({ ShiroDingTalkProperties.class })
 public class ShiroDingTalkWebFilterConfiguration implements ApplicationContextAware {
@@ -31,10 +36,16 @@ public class ShiroDingTalkWebFilterConfiguration implements ApplicationContextAw
 	
 	
 	@Override
+	/** Sets the application context.
+	 * @param applicationContext the applicationContext
+	 */
 	public void setApplicationContext(ApplicationContext applicationContext) throws BeansException {
 		this.applicationContext = applicationContext;
 	}
 
+	/** Returns the application context.
+	 * @return the result
+	 */
 	public ApplicationContext getApplicationContext() {
 		return applicationContext;
 	}

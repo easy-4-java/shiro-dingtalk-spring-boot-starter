@@ -56,6 +56,12 @@ public class DingTalkMaAuthenticatingFilter extends AbstractTrustableAuthenticat
 	}
 
 	@Override
+	/** Returns whether the access allowed is enabled.
+	 * @param request the request
+	 * @param response the response
+	 * @param mappedValue the mappedValue
+	 * @return the result
+	 */
 	protected boolean isAccessAllowed(ServletRequest request, ServletResponse response, Object mappedValue) {
 		// 判断是否无状态
 		if (isSessionStateless()) {
@@ -159,7 +165,7 @@ public class DingTalkMaAuthenticatingFilter extends AbstractTrustableAuthenticat
 
 
 		/**
-		 * 	应用的唯一标识key
+		 * 	application uniqueidentifierkey
 		 */
 		String appId = obtainKey(request);
 		String token = obtainToken(request);
@@ -179,38 +185,68 @@ public class DingTalkMaAuthenticatingFilter extends AbstractTrustableAuthenticat
 		return new DingTalkMaAuthenticationToken(loginRequest, getHost(request));
 	}
 
+	/** Extracts the key parameter from the HTTP request.
+	 * @param request the request
+	 * @return the result
+	 */
 	protected String obtainKey(ServletRequest request) {
         return request.getParameter(keyParameter);
     }
 
+	/** Extracts the token parameter from the HTTP request.
+	 * @param request the request
+	 * @return the result
+	 */
 	protected String obtainToken(ServletRequest request) {
 		return request.getParameter(tokenParameter);
 	}
 
+	/** Extracts the auth code parameter from the HTTP request.
+	 * @param request the request
+	 * @return the result
+	 */
 	protected String obtainAuthCode(ServletRequest request) {
 		return request.getParameter(authCodeParameter);
 	}
 
+	/** Returns the key parameter.
+	 * @return the result
+	 */
 	public String getKeyParameter() {
 		return keyParameter;
 	}
 
+	/** Sets the key parameter.
+	 * @param keyParameter the keyParameter
+	 */
 	public void setKeyParameter(String keyParameter) {
 		this.keyParameter = keyParameter;
 	}
 
+	/** Sets the token parameter.
+	 * @param tokenParameter the tokenParameter
+	 */
 	public void setTokenParameter(String tokenParameter) {
 		this.tokenParameter = tokenParameter;
 	}
 
+	/** Returns the token parameter.
+	 * @return the result
+	 */
 	public String getTokenParameter() {
 		return tokenParameter;
 	}
 
+	/** Returns the auth code parameter.
+	 * @return the result
+	 */
 	public String getAuthCodeParameter() {
 		return authCodeParameter;
 	}
 
+	/** Sets the auth code parameter.
+	 * @param authCodeParameter the authCodeParameter
+	 */
 	public void setAuthCodeParameter(String authCodeParameter) {
 		this.authCodeParameter = authCodeParameter;
 	}

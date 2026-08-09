@@ -30,6 +30,9 @@ public class DingTalkScanCodeAuthorizingRealm extends AbstractAuthorizingRealm {
     }
 
 	@Override
+	/** Returns the authentication token class.
+	 * @return the result
+	 */
 	public Class<?> getAuthenticationTokenClass() {
 		return DingTalkScanCodeAuthenticationToken.class;
 	}

@@ -17,6 +17,11 @@ import org.springframework.context.annotation.Configuration;
 	"org.apache.shiro.spring.config.web.autoconfigure.ShiroWebAutoConfiguration",
 	"org.apache.shiro.spring.boot.ShiroBizWebAutoConfiguration"
 })
+/** Auto-configuration for Shiro Ding Talk Web.
+ *
+ * @author [@Loong Wan](https://github.com/loong10k)
+ * @since 1.0.0
+ */
 @ConditionalOnProperty(prefix = ShiroDingTalkProperties.PREFIX, value = "enabled", havingValue = "true")
 @EnableConfigurationProperties({ ShiroDingTalkProperties.class })
 public class ShiroDingTalkWebAutoConfiguration extends AbstractShiroWebConfiguration implements ApplicationContextAware {
@@ -31,10 +36,16 @@ public class ShiroDingTalkWebAutoConfiguration extends AbstractShiroWebConfigura
 	}
 
 	@Override
+	/** Sets the application context.
+	 * @param applicationContext the applicationContext
+	 */
 	public void setApplicationContext(ApplicationContext applicationContext) throws BeansException {
 		this.applicationContext = applicationContext;
 	}
 
+	/** Returns the application context.
+	 * @return the result
+	 */
 	public ApplicationContext getApplicationContext() {
 		return applicationContext;
 	}

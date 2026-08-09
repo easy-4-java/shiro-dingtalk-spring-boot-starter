@@ -28,19 +28,19 @@ import org.apache.shiro.spring.boot.dingtalk.authc.DingTalkScanCodeLoginRequest;
 public class DingTalkScanCodeAuthenticationToken extends DefaultAuthenticationToken {
 
 	/**
-	 * 登录请求信息
+	 * loginrequestinformation
 	 */
 	private DingTalkScanCodeLoginRequest principal;
 	/**
-	 * 第三方平台UnionID（通常指第三方账号体系下用户的唯一ID）
+	 * third-partyplatformUnionID（third-partyuser uniqueID）
 	 */
 	protected String unionid;
 	/**
-	 * 第三方平台OpenID（通常指第三方账号体系下某应用中用户的唯一ID）
+	 * third-partyplatformOpenID（third-partyapplicationuser uniqueID）
 	 */
 	protected String openid;
 	/**
-	 * 用户信息
+	 * userinformation
 	 */
 	protected OapiSnsGetuserinfoBycodeResponse.UserInfo userInfo ;
 
@@ -50,22 +50,37 @@ public class DingTalkScanCodeAuthenticationToken extends DefaultAuthenticationTo
 	}
 
 	@Override
+	/** Returns the principal.
+	 * @return the result
+	 */
 	public Object getPrincipal() {
 		return principal;
 	}
 
+	/** Returns the unionid.
+	 * @return the result
+	 */
 	public String getUnionid() {
 		return unionid;
 	}
 
+	/** Sets the unionid.
+	 * @param unionid the unionid
+	 */
 	public void setUnionid(String unionid) {
 		this.unionid = unionid;
 	}
 
+	/** Returns the openid.
+	 * @return the result
+	 */
 	public String getOpenid() {
 		return openid;
 	}
 
+	/** Sets the openid.
+	 * @param openid the openid
+	 */
 	public void setOpenid(String openid) {
 		this.openid = openid;
 	}
@@ -74,6 +89,9 @@ public class DingTalkScanCodeAuthenticationToken extends DefaultAuthenticationTo
 		return userInfo;
 	}
 
+	/** Sets the user info.
+	 * @param userInfo the userInfo
+	 */
 	public void setUserInfo(OapiSnsGetuserinfoBycodeResponse.UserInfo userInfo) {
 		this.userInfo = userInfo;
 	}

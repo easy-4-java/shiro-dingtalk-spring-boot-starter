@@ -5,7 +5,7 @@ import lombok.Setter;
 import lombok.ToString;
 
 /**
- * 	第三方企业应用：小程序、H5配置
+ * 	third-partyenterpriseapplication：、H5configuration
  * @author [@Loong Wan](https://github.com/loong10k)
  */
 @Getter
@@ -14,19 +14,19 @@ import lombok.ToString;
 public class ShiroDingTalkSuiteProperties {
 
 	/**
-	 * 	第三方企业应用：程序客户端ID
+	 * 	third-partyenterpriseapplication：ID
 	 */
 	private String suiteId;
 	/**
-	 * 	第三方企业应用：应用的唯一标识key
+	 * 	third-partyenterpriseapplication：application uniqueidentifierkey
 	 */
 	private String appId;
 	/**
-	 * 	第三方企业应用：应用的唯一标识key
+	 * 	third-partyenterpriseapplication：application uniqueidentifierkey
 	 */
 	private String suiteKey;
 	/**
-	 *	第三方企业应用：应用的密钥
+	 *	third-partyenterpriseapplication：application
 	 */
 	private String suiteSecret;
 

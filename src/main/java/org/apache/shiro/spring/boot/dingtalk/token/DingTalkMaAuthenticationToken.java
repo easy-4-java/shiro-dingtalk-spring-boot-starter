@@ -27,7 +27,7 @@ import org.apache.shiro.spring.boot.dingtalk.authc.DingTalkMaLoginRequest;
 public class DingTalkMaAuthenticationToken extends DefaultAuthenticationToken {
 
 	/**
-	 * 登录请求信息
+	 * loginrequestinformation
 	 */
 	private DingTalkMaLoginRequest principal;
 
@@ -37,6 +37,9 @@ public class DingTalkMaAuthenticationToken extends DefaultAuthenticationToken {
 	}
 
 	@Override
+	/** Returns the principal.
+	 * @return the result
+	 */
 	public Object getPrincipal() {
 		return principal;
 	}

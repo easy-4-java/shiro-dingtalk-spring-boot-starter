@@ -27,7 +27,7 @@ import org.apache.shiro.spring.boot.dingtalk.authc.DingTalkTmpCodeLoginRequest;
 public class DingTalkTmpCodeAuthenticationToken extends DefaultAuthenticationToken {
 
 	/**
-	 * 登录请求信息
+	 * loginrequestinformation
 	 */
 	private DingTalkTmpCodeLoginRequest principal;
 
@@ -37,6 +37,9 @@ public class DingTalkTmpCodeAuthenticationToken extends DefaultAuthenticationTok
 	}
 
 	@Override
+	/** Returns the principal.
+	 * @return the result
+	 */
 	public Object getPrincipal() {
 		return principal;
 	}
