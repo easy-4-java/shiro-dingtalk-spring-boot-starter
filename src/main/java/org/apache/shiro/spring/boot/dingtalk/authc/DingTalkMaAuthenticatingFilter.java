@@ -16,11 +16,12 @@
 package org.apache.shiro.spring.boot.dingtalk.authc;
 
 import com.alibaba.fastjson.JSONObject;
-import lombok.extern.slf4j.Slf4j;
+
 import org.apache.shiro.authc.AuthenticationException;
 import org.apache.shiro.authc.AuthenticationToken;
 import org.apache.shiro.biz.authc.AuthcResponse;
-import org.apache.shiro.biz.utils.WebUtils;
+import org.apache.shiro.biz.utils.WebUtils2;
+import org.apache.shiro.web.util.WebUtils;
 import org.apache.shiro.biz.web.filter.authc.AbstractTrustableAuthenticatingFilter;
 import org.apache.shiro.biz.web.servlet.http.HttpStatus;
 import org.apache.shiro.spring.boot.dingtalk.exception.DingTalkCodeNotFoundException;
@@ -31,17 +32,19 @@ import org.slf4j.LoggerFactory;
 import org.springframework.http.MediaType;
 import org.springframework.util.StringUtils;
 
-import jakarta.servlet.ServletRequest;
-import jakarta.servlet.ServletResponse;
+import javax.servlet.ServletRequest;
+import javax.servlet.ServletResponse;
 import java.nio.charset.StandardCharsets;
 
 /**
  * https://open.dingtalk.com/document/orgapp-client/mini-program-free-login
  */
-@Slf4j
+
 public class DingTalkMaAuthenticatingFilter extends AbstractTrustableAuthenticatingFilter {
 
 	private static final Logger log = LoggerFactory.getLogger(DingTalkMaAuthenticatingFilter.class);
+
+
 
 	public static final String SPRING_SECURITY_FORM_APP_KEY = "key";
 	public static final String SPRING_SECURITY_FORM_TOKEN_KEY = "token";
@@ -117,7 +120,7 @@ public class DingTalkMaAuthenticatingFilter extends AbstractTrustableAuthenticat
 			}
 
 			// Ajax 请求：响应json数据对象
-			if (WebUtils.isAjaxRequest(request)) {
+			if (WebUtils2.isAjaxRequest(request)) {
 
 				WebUtils.toHttp(response).setStatus(HttpStatus.SC_OK);
 				response.setContentType(MediaType.APPLICATION_JSON_VALUE);
@@ -139,7 +142,7 @@ public class DingTalkMaAuthenticatingFilter extends AbstractTrustableAuthenticat
 	@Override
 	protected AuthenticationToken createToken(ServletRequest request, ServletResponse response) {
 		// Post && JSON
-		if(WebUtils.isObjectRequest(request)) {
+		if(WebUtils2.isObjectRequest(request)) {
 
 			if (log.isDebugEnabled()) {
 				log.debug("Post && JSON");

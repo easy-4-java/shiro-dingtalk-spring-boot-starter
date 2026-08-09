@@ -32,7 +32,7 @@ class DingTalkMaLoginRequestTest {
     @Test
     @DisplayName("Instance can be created via constructor")
     void testInstantiation() {
-        DingTalkMaLoginRequest instance = new DingTalkMaLoginRequest(null);
+        DingTalkMaLoginRequest instance = new DingTalkMaLoginRequest("key", "token", "authCode");
         assertThat(instance).isNotNull();
     }
 }

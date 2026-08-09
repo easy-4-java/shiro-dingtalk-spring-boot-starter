@@ -1,10 +1,12 @@
 package org.apache.shiro.spring.boot.dingtalk.realm;
 
 import com.dingtalk.api.response.OapiSnsGetuserinfoBycodeResponse;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import com.dingtalk.api.response.OapiSnsGetuserinfoBycodeResponse.UserInfo;
 import com.dingtalk.spring.boot.DingTalkTemplate;
 import com.taobao.api.ApiException;
-import lombok.extern.slf4j.Slf4j;
+
 import org.apache.shiro.authc.AuthenticationException;
 import org.apache.shiro.authc.AuthenticationInfo;
 import org.apache.shiro.authc.AuthenticationToken;
@@ -20,8 +22,11 @@ import org.springframework.util.StringUtils;
  * DingTalk AuthorizingRealm
  * @author [@Loong Wan](https://github.com/loong10k)
  */
-@Slf4j
+
 public class DingTalkScanCodeAuthorizingRealm extends AbstractAuthorizingRealm {
+
+	private static final Logger log = LoggerFactory.getLogger(DingTalkScanCodeAuthorizingRealm.class);
+
 
     private final DingTalkTemplate dingTalkTemplate;
 
