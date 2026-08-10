@@ -40,7 +40,7 @@ import java.nio.charset.StandardCharsets;
  *  Enterprise internal application free-login：https://open.dingtalk.com/document/orgapp-server/enterprise-internal-application-logon-free
  *  Third-party enterprise application free-login： https://open.dingtalk.com/document/orgapp-server/third-party-enterprise-application-logon-free
  *  Application management backend free-login: https://open.dingtalk.com/document/orgapp-server/log-on-site-application-management-backend
- * @author [@Loong Wan](https://github.com/loong10k)
+ * @author <a href="https://github.com/loong10k">Loong Wan</a>
  */
 
 public class DingTalkTmpCodeAuthenticatingFilter extends AbstractTrustableAuthenticatingFilter {

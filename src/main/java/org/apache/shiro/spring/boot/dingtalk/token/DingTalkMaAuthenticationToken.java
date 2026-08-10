@@ -21,7 +21,7 @@ import org.apache.shiro.spring.boot.dingtalk.authc.DingTalkMaLoginRequest;
 /**
  * DingTalk Authentication Token
  *
- * @author [@Loong Wan](https://github.com/loong10k)
+ * @author <a href="https://github.com/loong10k">Loong Wan</a>
  */
 @SuppressWarnings("serial")
 public class DingTalkMaAuthenticationToken extends DefaultAuthenticationToken {

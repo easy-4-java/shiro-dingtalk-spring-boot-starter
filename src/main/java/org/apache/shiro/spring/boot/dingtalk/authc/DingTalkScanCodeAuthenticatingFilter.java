@@ -38,7 +38,7 @@ import java.nio.charset.StandardCharsets;
 
 /**
  * Scan QR code to log on to third-party websites: https://open.dingtalk.com/document/orgapp-server/scan-qr-code-to-log-on-to-third-party-websites
- * @author [@Loong Wan](https://github.com/loong10k)
+ * @author <a href="https://github.com/loong10k">Loong Wan</a>
  */
 
 public class DingTalkScanCodeAuthenticatingFilter extends AbstractTrustableAuthenticatingFilter {

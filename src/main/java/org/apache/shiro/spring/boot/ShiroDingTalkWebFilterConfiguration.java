@@ -23,7 +23,7 @@ import org.springframework.context.annotation.Configuration;
 })
 /** Configuration for Shiro Ding Talk Web authentication filter chain.
  *
- * @author [@Loong Wan](https://github.com/loong10k)
+ * @author <a href="https://github.com/loong10k">Loong Wan</a>
  * @since 1.0.0
  */
 @ConditionalOnProperty(prefix = ShiroDingTalkProperties.PREFIX, value = "enabled", havingValue = "true")

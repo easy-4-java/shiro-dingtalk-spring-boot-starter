@@ -3,7 +3,7 @@ package org.apache.shiro.spring.boot.dingtalk.exception;
 import org.apache.shiro.authc.AuthenticationException;
 /** Exception thrown when a Ding Talk Code Incorrect error occurs.
  *
- * @author [@Loong Wan](https://github.com/loong10k)
+ * @author <a href="https://github.com/loong10k">Loong Wan</a>
  * @since 1.0.0
  */
 

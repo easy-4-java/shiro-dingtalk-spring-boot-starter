@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 /**
  * DingTalk scan-code login authorization for third-party systems
- * @author [@Loong Wan](https://github.com/loong10k)
+ * @author <a href="https://github.com/loong10k">Loong Wan</a>
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class DingTalkScanCodeLoginRequest {

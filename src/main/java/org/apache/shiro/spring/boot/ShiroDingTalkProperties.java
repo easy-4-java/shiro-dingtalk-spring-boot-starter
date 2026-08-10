@@ -27,7 +27,7 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 import java.util.List;
 /** Configuration properties for Shiro Ding Talk.
  *
- * @author [@Loong Wan](https://github.com/loong10k)
+ * @author <a href="https://github.com/loong10k">Loong Wan</a>
  * @since 1.0.0
  */
 
