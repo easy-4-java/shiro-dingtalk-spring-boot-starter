@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 /**
  * 第三方系统钉钉扫码登录授权
- * @author [@Loong Wan](https://github.com/loong10k)
+ * @author <a href="https://github.com/loong10k">Loong Wan</a>
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class DingTalkScanCodeLoginRequest {
