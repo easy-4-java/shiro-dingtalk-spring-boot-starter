@@ -16,7 +16,7 @@ import org.springframework.util.StringUtils;
 
 /**
  * DingTalk AuthorizingRealm
- * @author [@Loong Wan](https://github.com/loong10k)
+ * @author <a href="https://github.com/loong10k">Loong Wan</a>
  */
 @Slf4j
 public class DingTalkTempCodeAuthorizingRealm extends AbstractAuthorizingRealm {
