@@ -32,6 +32,10 @@ public class DingTalkMaLoginRequest {
 	 */
 	protected String accessToken;
 
+    /**
+     * Constructs a new ding talk ma login request instance.
+     *
+     */
 	@JsonIgnoreProperties(ignoreUnknown = true)
     @JsonCreator
     public DingTalkMaLoginRequest(@JsonProperty("key") String key,

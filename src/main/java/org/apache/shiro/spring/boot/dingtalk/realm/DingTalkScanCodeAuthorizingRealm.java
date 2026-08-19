@@ -21,6 +21,7 @@ import org.springframework.util.StringUtils;
 /**
  * DingTalk AuthorizingRealm
  * @author <a href="https://github.com/loong10k">Loong Wan</a>
+ * @since 1.0.0
  */
 
 public class DingTalkScanCodeAuthorizingRealm extends AbstractAuthorizingRealm {
@@ -30,6 +31,11 @@ public class DingTalkScanCodeAuthorizingRealm extends AbstractAuthorizingRealm {
 
     private final DingTalkTemplate dingTalkTemplate;
 
+    /**
+     * Constructs a new ding talk scan code authorizing realm instance.
+     *
+     * @param dingTalkTemplate the ding talk template
+     */
     public DingTalkScanCodeAuthorizingRealm(DingTalkTemplate dingTalkTemplate) {
         this.dingTalkTemplate = dingTalkTemplate;
     }
@@ -42,6 +48,13 @@ public class DingTalkScanCodeAuthorizingRealm extends AbstractAuthorizingRealm {
 		return DingTalkScanCodeAuthenticationToken.class;
 	}
 
+	/**
+	 * do Get Authentication Info.
+	 *
+	 * @param token the token
+	 * @return the result
+	 * @throws AuthenticationException if an error occurs
+	 */
 	@Override
 	protected AuthenticationInfo doGetAuthenticationInfo(AuthenticationToken token) throws AuthenticationException {
 

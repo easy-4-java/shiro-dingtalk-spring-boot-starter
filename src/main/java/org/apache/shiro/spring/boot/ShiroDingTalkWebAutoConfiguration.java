@@ -28,6 +28,13 @@ public class ShiroDingTalkWebAutoConfiguration extends AbstractShiroWebConfigura
 
 	private ApplicationContext applicationContext;
 
+	/**
+	 * wx Authentication Success Handler.
+	 *
+	 * @param jwtPayloadRepository the jwt payload repository
+	 * @param jwtProperties the jwt properties
+	 * @return the result
+	 */
 	@Bean
 	protected DingTalkAuthenticationSuccessHandler wxAuthenticationSuccessHandler(
 			JwtPayloadRepository jwtPayloadRepository,

@@ -19,6 +19,7 @@ import org.apache.shiro.authc.AuthenticationException;
 
 /**
  * @author <a href="https://github.com/loong10k">Loong Wan</a>
+ * @since 1.0.0
  */
 public class DingTalkCodeNotFoundException extends AuthenticationException {
 
@@ -27,18 +28,38 @@ public class DingTalkCodeNotFoundException extends AuthenticationException {
 	 */
 	private static final long serialVersionUID = 5804347841925337928L;
 
+	/**
+	 * Constructs a new ding talk code not found exception instance.
+	 *
+	 */
 	public DingTalkCodeNotFoundException() {
 		super();
 	}
 
+	/**
+	 * Constructs a new ding talk code not found exception instance.
+	 *
+	 * @param message the message
+	 * @param cause the cause
+	 */
 	public DingTalkCodeNotFoundException(String message, Throwable cause) {
 		super(message, cause);
 	}
 
+	/**
+	 * Constructs a new ding talk code not found exception instance.
+	 *
+	 * @param message the message
+	 */
 	public DingTalkCodeNotFoundException(String message) {
 		super(message);
 	}
 
+	/**
+	 * Constructs a new ding talk code not found exception instance.
+	 *
+	 * @param cause the cause
+	 */
 	public DingTalkCodeNotFoundException(Throwable cause) {
 		super(cause);
 	}

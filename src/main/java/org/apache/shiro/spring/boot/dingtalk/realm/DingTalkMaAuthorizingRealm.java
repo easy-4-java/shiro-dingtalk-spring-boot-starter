@@ -22,6 +22,7 @@ import java.util.concurrent.ConcurrentHashMap;
 /**
  * DingTalk AuthorizingRealm
  * @author <a href="https://github.com/loong10k">Loong Wan</a>
+ * @since 1.0.0
  */
 
 public class DingTalkMaAuthorizingRealm extends AbstractAuthorizingRealm {
@@ -32,6 +33,11 @@ public class DingTalkMaAuthorizingRealm extends AbstractAuthorizingRealm {
     private final DingTalkTemplate dingTalkTemplate;
     private Map<String, String> appKeySecret = new ConcurrentHashMap<>();
 
+    /**
+     * Constructs a new ding talk ma authorizing realm instance.
+     *
+     * @param dingTalkTemplate the ding talk template
+     */
     public DingTalkMaAuthorizingRealm( DingTalkTemplate dingTalkTemplate) {
         this.dingTalkTemplate = dingTalkTemplate;
     }
@@ -44,6 +50,13 @@ public class DingTalkMaAuthorizingRealm extends AbstractAuthorizingRealm {
 		return DingTalkMaAuthenticationToken.class;
 	}
 
+	/**
+	 * do Get Authentication Info.
+	 *
+	 * @param token the token
+	 * @return the result
+	 * @throws AuthenticationException if an error occurs
+	 */
 	@Override
 	protected AuthenticationInfo doGetAuthenticationInfo(AuthenticationToken token) throws AuthenticationException {
 

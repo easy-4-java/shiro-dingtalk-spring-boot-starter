@@ -22,6 +22,7 @@ import org.apache.shiro.spring.boot.dingtalk.authc.DingTalkTmpCodeLoginRequest;
  * DingTalk Authentication Token
  *
  * @author <a href="https://github.com/loong10k">Loong Wan</a>
+ * @since 1.0.0
  */
 @SuppressWarnings("serial")
 public class DingTalkTmpCodeAuthenticationToken extends DefaultAuthenticationToken {
@@ -31,6 +32,12 @@ public class DingTalkTmpCodeAuthenticationToken extends DefaultAuthenticationTok
 	 */
 	private DingTalkTmpCodeLoginRequest principal;
 
+	/**
+	 * Constructs a new ding talk tmp code authentication token instance.
+	 *
+	 * @param loginRequest the login request
+	 * @param host the host
+	 */
 	public DingTalkTmpCodeAuthenticationToken(DingTalkTmpCodeLoginRequest loginRequest, String host) {
 		this.principal = loginRequest;
 		this.setHost(host);

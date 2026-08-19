@@ -22,6 +22,7 @@ import org.apache.shiro.spring.boot.dingtalk.authc.DingTalkMaLoginRequest;
  * DingTalk Authentication Token
  *
  * @author <a href="https://github.com/loong10k">Loong Wan</a>
+ * @since 1.0.0
  */
 @SuppressWarnings("serial")
 public class DingTalkMaAuthenticationToken extends DefaultAuthenticationToken {
@@ -31,6 +32,12 @@ public class DingTalkMaAuthenticationToken extends DefaultAuthenticationToken {
 	 */
 	private DingTalkMaLoginRequest principal;
 
+	/**
+	 * Constructs a new ding talk ma authentication token instance.
+	 *
+	 * @param loginRequest the login request
+	 * @param host the host
+	 */
 	public DingTalkMaAuthenticationToken(DingTalkMaLoginRequest loginRequest, String host) {
 		this.principal = loginRequest;
 		this.setHost(host);

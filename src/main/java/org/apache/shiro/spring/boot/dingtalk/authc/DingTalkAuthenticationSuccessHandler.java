@@ -48,9 +48,19 @@ public class DingTalkAuthenticationSuccessHandler implements AuthenticationSucce
 	/** If Check JWT Validity. */
 	private boolean checkExpiry = false;
 
+	/**
+	 * Constructs a new ding talk authentication success handler instance.
+	 *
+	 */
 	public DingTalkAuthenticationSuccessHandler() {
 	}
 
+	/**
+	 * Constructs a new ding talk authentication success handler instance.
+	 *
+	 * @param jwtPayloadRepository the jwt payload repository
+	 * @param checkExpiry the check expiry
+	 */
 	public DingTalkAuthenticationSuccessHandler(JwtPayloadRepository jwtPayloadRepository, boolean checkExpiry) {
 		super();
 		this.jwtPayloadRepository = jwtPayloadRepository;

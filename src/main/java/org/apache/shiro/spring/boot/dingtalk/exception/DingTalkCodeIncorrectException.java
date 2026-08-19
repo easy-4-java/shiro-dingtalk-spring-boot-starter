@@ -10,10 +10,21 @@ import org.apache.shiro.authc.AuthenticationException;
 @SuppressWarnings("serial")
 public class DingTalkCodeIncorrectException extends AuthenticationException {
 
+	/**
+	 * Constructs a new ding talk code incorrect exception instance.
+	 *
+	 * @param msg the msg
+	 */
 	public DingTalkCodeIncorrectException(String msg) {
 		super(msg);
 	}
 	
+	/**
+	 * Constructs a new ding talk code incorrect exception instance.
+	 *
+	 * @param msg the msg
+	 * @param t the t
+	 */
 	public DingTalkCodeIncorrectException(String msg, Throwable t) {
 		super(msg, t);
 	}

@@ -38,6 +38,8 @@ import java.nio.charset.StandardCharsets;
 
 /**
  * https://open.dingtalk.com/document/orgapp-client/mini-program-free-login
+ * @author <a href="https://github.com/loong10k">Loong Wan</a>
+ * @since 1.0.0
  */
 
 public class DingTalkMaAuthenticatingFilter extends AbstractTrustableAuthenticatingFilter {
@@ -46,14 +48,30 @@ public class DingTalkMaAuthenticatingFilter extends AbstractTrustableAuthenticat
 
 
 
+	/**
+	 * Constructs a new ding talk ma authenticating filter instance.
+	 *
+	 */
 	public static final String SPRING_SECURITY_FORM_APP_KEY = "key";
+	/**
+	 * Constructs a new ding talk ma authenticating filter instance.
+	 *
+	 */
 	public static final String SPRING_SECURITY_FORM_TOKEN_KEY = "token";
+	/**
+	 * Constructs a new ding talk ma authenticating filter instance.
+	 *
+	 */
 	public static final String SPRING_SECURITY_FORM_CODE_KEY = "authCode";
 
 	private String keyParameter = SPRING_SECURITY_FORM_APP_KEY;
 	private String tokenParameter = SPRING_SECURITY_FORM_TOKEN_KEY;
 	private String authCodeParameter = SPRING_SECURITY_FORM_CODE_KEY;
 
+	/**
+	 * Constructs a new ding talk ma authenticating filter instance.
+	 *
+	 */
 	public DingTalkMaAuthenticatingFilter() {
 		super();
 	}
@@ -84,6 +102,14 @@ public class DingTalkMaAuthenticatingFilter extends AbstractTrustableAuthenticat
 		return super.isAccessAllowed(request, response, mappedValue);
 	}
 
+	/**
+	 * Determines whether on access denied.
+	 *
+	 * @param request the request
+	 * @param response the response
+	 * @return the result
+	 * @throws Exception if an error occurs
+	 */
 	@Override
 	protected boolean onAccessDenied(ServletRequest request, ServletResponse response) throws Exception {
 
@@ -139,6 +165,13 @@ public class DingTalkMaAuthenticatingFilter extends AbstractTrustableAuthenticat
 
 
 
+	/**
+	 * create Token.
+	 *
+	 * @param request the request
+	 * @param response the response
+	 * @return the result
+	 */
 	@Override
 	protected AuthenticationToken createToken(ServletRequest request, ServletResponse response) {
 		// Post && JSON

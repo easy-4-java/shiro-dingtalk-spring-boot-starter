@@ -39,6 +39,7 @@ import java.nio.charset.StandardCharsets;
 /**
  * Scan QR code to log on to third-party websites: https://open.dingtalk.com/document/orgapp-server/scan-qr-code-to-log-on-to-third-party-websites
  * @author <a href="https://github.com/loong10k">Loong Wan</a>
+ * @since 1.0.0
  */
 
 public class DingTalkScanCodeAuthenticatingFilter extends AbstractTrustableAuthenticatingFilter {
@@ -46,14 +47,30 @@ public class DingTalkScanCodeAuthenticatingFilter extends AbstractTrustableAuthe
 	private static final Logger log = LoggerFactory.getLogger(DingTalkScanCodeAuthenticatingFilter.class);
 
 
+	/**
+	 * Constructs a new ding talk scan code authenticating filter instance.
+	 *
+	 */
 	public static final String SPRING_SECURITY_FORM_APP_KEY = "key";
+	/**
+	 * Constructs a new ding talk scan code authenticating filter instance.
+	 *
+	 */
 	public static final String SPRING_SECURITY_FORM_TOKEN_KEY = "token";
+	/**
+	 * Constructs a new ding talk scan code authenticating filter instance.
+	 *
+	 */
 	public static final String SPRING_SECURITY_FORM_TMPCODE_KEY = "loginTmpCode";
 
 	private String keyParameter = SPRING_SECURITY_FORM_APP_KEY;
 	private String tokenParameter = SPRING_SECURITY_FORM_TOKEN_KEY;
 	private String codeParameter = SPRING_SECURITY_FORM_TMPCODE_KEY;
 
+	/**
+	 * Constructs a new ding talk scan code authenticating filter instance.
+	 *
+	 */
 	public DingTalkScanCodeAuthenticatingFilter() {
 		super();
 	}
@@ -84,6 +101,14 @@ public class DingTalkScanCodeAuthenticatingFilter extends AbstractTrustableAuthe
 		return super.isAccessAllowed(request, response, mappedValue);
 	}
 
+	/**
+	 * Determines whether on access denied.
+	 *
+	 * @param request the request
+	 * @param response the response
+	 * @return the result
+	 * @throws Exception if an error occurs
+	 */
 	@Override
 	protected boolean onAccessDenied(ServletRequest request, ServletResponse response) throws Exception {
 
@@ -137,6 +162,13 @@ public class DingTalkScanCodeAuthenticatingFilter extends AbstractTrustableAuthe
 		}
 	}
 
+	/**
+	 * create Token.
+	 *
+	 * @param request the request
+	 * @param response the response
+	 * @return the result
+	 */
 	@Override
 	protected AuthenticationToken createToken(ServletRequest request, ServletResponse response) {
 		// Post && JSON

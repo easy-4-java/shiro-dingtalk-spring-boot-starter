@@ -41,6 +41,7 @@ import java.nio.charset.StandardCharsets;
  *  Third-party enterprise application free-login： https://open.dingtalk.com/document/orgapp-server/third-party-enterprise-application-logon-free
  *  Application management backend free-login: https://open.dingtalk.com/document/orgapp-server/log-on-site-application-management-backend
  * @author <a href="https://github.com/loong10k">Loong Wan</a>
+ * @since 1.0.0
  */
 
 public class DingTalkTmpCodeAuthenticatingFilter extends AbstractTrustableAuthenticatingFilter {
@@ -48,14 +49,30 @@ public class DingTalkTmpCodeAuthenticatingFilter extends AbstractTrustableAuthen
 	private static final Logger log = LoggerFactory.getLogger(DingTalkTmpCodeAuthenticatingFilter.class);
 
 
+	/**
+	 * Constructs a new ding talk tmp code authenticating filter instance.
+	 *
+	 */
 	public static final String SPRING_SECURITY_FORM_APP_KEY = "key";
+	/**
+	 * Constructs a new ding talk tmp code authenticating filter instance.
+	 *
+	 */
 	public static final String SPRING_SECURITY_FORM_TOKEN_KEY = "token";
+	/**
+	 * Constructs a new ding talk tmp code authenticating filter instance.
+	 *
+	 */
 	public static final String SPRING_SECURITY_FORM_CODE_KEY = "code";
 
 	private String keyParameter = SPRING_SECURITY_FORM_APP_KEY;
 	private String tokenParameter = SPRING_SECURITY_FORM_TOKEN_KEY;
 	private String codeParameter = SPRING_SECURITY_FORM_CODE_KEY;
 
+	/**
+	 * Constructs a new ding talk tmp code authenticating filter instance.
+	 *
+	 */
 	public DingTalkTmpCodeAuthenticatingFilter() {
 		super();
 	}
@@ -86,6 +103,14 @@ public class DingTalkTmpCodeAuthenticatingFilter extends AbstractTrustableAuthen
 		return super.isAccessAllowed(request, response, mappedValue);
 	}
 
+	/**
+	 * Determines whether on access denied.
+	 *
+	 * @param request the request
+	 * @param response the response
+	 * @return the result
+	 * @throws Exception if an error occurs
+	 */
 	@Override
 	protected boolean onAccessDenied(ServletRequest request, ServletResponse response) throws Exception {
 
@@ -141,6 +166,13 @@ public class DingTalkTmpCodeAuthenticatingFilter extends AbstractTrustableAuthen
 
 
 
+	/**
+	 * create Token.
+	 *
+	 * @param request the request
+	 * @param response the response
+	 * @return the result
+	 */
 	@Override
 	protected AuthenticationToken createToken(ServletRequest request, ServletResponse response) {
 		// Post && JSON

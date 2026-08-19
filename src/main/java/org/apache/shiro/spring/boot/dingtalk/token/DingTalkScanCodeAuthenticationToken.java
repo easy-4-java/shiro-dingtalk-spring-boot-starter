@@ -23,6 +23,7 @@ import org.apache.shiro.spring.boot.dingtalk.authc.DingTalkScanCodeLoginRequest;
  * DingTalk Authentication Token
  *
  * @author <a href="https://github.com/loong10k">Loong Wan</a>
+ * @since 1.0.0
  */
 @SuppressWarnings("serial")
 public class DingTalkScanCodeAuthenticationToken extends DefaultAuthenticationToken {
@@ -44,6 +45,12 @@ public class DingTalkScanCodeAuthenticationToken extends DefaultAuthenticationTo
 	 */
 	protected OapiSnsGetuserinfoBycodeResponse.UserInfo userInfo ;
 
+	/**
+	 * Constructs a new ding talk scan code authentication token instance.
+	 *
+	 * @param loginRequest the login request
+	 * @param host the host
+	 */
 	public DingTalkScanCodeAuthenticationToken(DingTalkScanCodeLoginRequest loginRequest, String host) {
 		this.principal = loginRequest;
 		this.setHost(host);
@@ -85,6 +92,11 @@ public class DingTalkScanCodeAuthenticationToken extends DefaultAuthenticationTo
 		this.openid = openid;
 	}
 
+	/**
+	 * Returns the user info.
+	 *
+	 * @return the user info
+	 */
 	public OapiSnsGetuserinfoBycodeResponse.UserInfo getUserInfo() {
 		return userInfo;
 	}
